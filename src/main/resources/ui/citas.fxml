@@ -23,11 +23,11 @@
       <TextField fx:id="txtDireccion" layoutX="141.0" layoutY="231.0" prefHeight="25.0" prefWidth="237.0" />
       <Text layoutX="39.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono" />
       <TextField fx:id="txtTelefono" layoutX="141.0" layoutY="279.0" prefHeight="25.0" prefWidth="109.0" />
-      <Button fx:id="btnVer" layoutX="141.0" layoutY="336.0" mnemonicParsing="false" text="Ver citas paciente" />
+      <Button fx:id="btnVer" onAction="#verCitasPaciente" layoutX="141.0" layoutY="336.0" mnemonicParsing="false" text="Ver citas paciente" />
       <Text layoutX="290.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pulsa tecla enter" />
       <Line endX="-100.0" endY="181.0" layoutX="507.0" layoutY="150.0" startX="-100.0" startY="-27.0" />
       <Text layoutX="434.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número de cita" />
-      <TextField fx:id="txtNumero" layoutX="536.0" layoutY="142.0" prefHeight="25.0" prefWidth="109.0" />
+      <TextField fx:id="txtNumero" disable="true" layoutX="536.0" layoutY="142.0" prefHeight="25.0" prefWidth="109.0" />
       <Text layoutX="434.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de cita" />
       <Text layoutX="434.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Especialidad" />
       <DatePicker fx:id="dpFecha" layoutX="529.0" layoutY="201.0" />
@@ -44,10 +44,10 @@
                <TableColumn fx:id="colEspecialidad" prefWidth="175.0" text="ESPECIALIDAD" />
            </columns>
        </TableView>
-      <Button fx:id="btnLimpiar" layoutX="102.0" layoutY="637.0" mnemonicParsing="false" text="Limpiar campos citas" />
-      <Button fx:id="btnNueva" layoutX="268.0" layoutY="637.0" mnemonicParsing="false" text="Nueva cita" />
-      <Button fx:id="btnBorrar" layoutX="382.0" layoutY="637.0" mnemonicParsing="false" text="Borrar cita" />
-      <Button fx:id="btnModificar" layoutX="499.0" layoutY="637.0" mnemonicParsing="false" text="Modificar cita" />
+      <Button fx:id="btnLimpiar" onAction="#limpiarCamposCita" layoutX="102.0" layoutY="637.0" mnemonicParsing="false" text="Limpiar campos citas" />
+      <Button fx:id="btnNueva" onAction="#crearNuevCita" layoutX="268.0" layoutY="637.0" mnemonicParsing="false" text="Nueva cita" />
+      <Button fx:id="btnBorrar" onAction="#borrarCitaSeleccionada" layoutX="382.0" layoutY="637.0" mnemonicParsing="false" text="Borrar cita" />
+      <Button fx:id="btnModificar" onAction="#modificarCitaSeleccionada" layoutX="499.0" layoutY="637.0" mnemonicParsing="false" text="Modificar cita" />
       <Text fill="#0084ff" layoutX="334.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cita Médica" wrappingWidth="126.578125">
          <font>
             <Font name="Ebrima Bold" size="30.0" />

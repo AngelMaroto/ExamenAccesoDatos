@@ -1,6 +1,7 @@
 package com.example.examenaccesodatos.util;
 
 import com.example.examenaccesodatos.model.Cita;
+import com.example.examenaccesodatos.model.Especialidad;
 import com.example.examenaccesodatos.model.Paciente;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,6 +17,7 @@ public class HibernateUtil {
         // Se registran las clases que hay que MAPEAR con cada tabla de la base de datos
         cfg.addAnnotatedClass(Cita.class);
         cfg.addAnnotatedClass(Paciente.class);
+        cfg.addAnnotatedClass(Especialidad.class);
 
         //configuration.addAnnotatedClass(Clase1.class);
         //configuration.addAnnotatedClass(Clase2.class);
