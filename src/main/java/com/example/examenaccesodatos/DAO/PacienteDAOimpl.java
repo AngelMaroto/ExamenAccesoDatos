@@ -2,6 +2,7 @@ package com.example.examenaccesodatos.DAO;
 
 import com.example.examenaccesodatos.Connection.DBConnection;
 import com.example.examenaccesodatos.model.Paciente;
+import org.hibernate.Session;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -57,5 +58,11 @@ public class PacienteDAOimpl implements PacienteDAO {
 
         // Si no se encontró, se devolverá null
         return paciente;
+    }
+
+    @Override
+    public Paciente crearPaciente(Session session, Paciente pac) {
+        session.save(pac);
+        return pac;
     }
 }

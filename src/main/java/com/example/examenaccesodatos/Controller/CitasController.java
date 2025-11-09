@@ -12,7 +12,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.hibernate.Session;
 
 import java.io.File;
@@ -38,7 +41,7 @@ public class CitasController {
     @FXML private TableColumn<Cita, Integer> colNumero;
     @FXML private TableColumn<Cita, LocalDate> colFecha;
     @FXML private TableColumn<Cita, String> colEspecialidad;
-    @FXML private Button btnLimpiar, btnBorrar, btnNueva, btnModificar;
+    @FXML private Button btnLimpiar, btnBorrar, btnNueva, btnModificar, btnCrear;
 
     // --- DAOs y variables auxiliares ---
     PacienteDAO pacienteDAO = new PacienteDAOimpl();      // Acceso a pacientes con JDBC
@@ -306,5 +309,26 @@ public class CitasController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    //metodo para abrir la interfaz de crear paciente
+    @FXML
+    private void abrirInterfazPaciente(){
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/pacientes.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        Stage stage = new Stage();
+        stage.setTitle("Crear Paciente");
+        stage.setScene(scene);
+        stage.show();
+
+        Stage currenStage = (Stage) btnCrear.getScene().getWindow();
+        currenStage.close();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.out.println("Error al cargar la interfaz");
+    }
     }
 }
